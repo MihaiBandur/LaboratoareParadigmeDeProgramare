@@ -8,12 +8,12 @@ import java.io.StringReader
 import javax.xml.parsers.DocumentBuilderFactory
 import org.xml.sax.InputSource
 
-// Clasă abstractă pentru parsere
+
 abstract class Parser {
     abstract fun parseQuest(response: String): Map<String, Any>
 }
 
-// Clasă responsabilă pentru obținerea resurselor HTTP
+
 class Application {
     private val client = OkHttpClient()
 
@@ -27,7 +27,7 @@ class Application {
     }
 }
 
-// Parser JSON
+
 class JsonParser : Parser() {
     override fun parseQuest(response: String): Map<String, Any> {
         val jsonObject = JSONObject(response)
@@ -63,7 +63,7 @@ class JsonParser : Parser() {
     }
 }
 
-// Parser XML
+
 class XmlParser : Parser() {
     override fun parseQuest(response: String): Map<String, Any> {
         val docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
@@ -87,7 +87,7 @@ class XmlParser : Parser() {
     }
 }
 
-// Parser YAML
+
 class YamlParser : Parser() {
     override fun parseQuest(response: String): Map<String, Any> {
         val yaml = Yaml()
@@ -95,7 +95,7 @@ class YamlParser : Parser() {
     }
 }
 
-// Funcția principală
+
 fun main() {
     val app = Application()
 
@@ -104,13 +104,13 @@ fun main() {
     val jsonResponse = app.getResource("https://jsonplaceholder.typicode.com/posts/1", jsonParser)
     println("JSON Response: $jsonResponse")
 
-    // Test pentru XML (asigură-te că URL-ul returnează XML valid)
+
     val xmlParser = XmlParser()
     val xmlUrl = "https://www.w3schools.com/xml/note.xml"  // Un exemplu valid
     val xmlResponse = app.getResource(xmlUrl, xmlParser)
     println("XML Response: $xmlResponse")
 
-    // Test pentru YAML (citire din fișier local)
+
     val yamlParser = YamlParser()
     val yamlFile = File("data.yaml")
     if (yamlFile.exists()) {
