@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eeb24be-9e81-40b0-99e5-33870f150d91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exercitiul4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercitiul3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exercitiul3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +35,7 @@
   "keyToString": {
     "Python.Exercitiul3.executor": "Run",
     "Python.Exercitiul4.executor": "Run",
+    "Python.Tema.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
