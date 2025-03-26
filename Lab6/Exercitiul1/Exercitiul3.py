@@ -38,26 +38,26 @@ class FlacFile(AudioFile):
     def play(self):
         print(f"Se cântă {self.filename}, un fișier FLAC.")
 
-
-
-
 def ValidarePath():
     while True:
         path = input("Calea către directorul cu fișiere audio: ").strip()
         try:
             if not os.path.exists(path):
                 raise FileNotFoundError(f"Eroare: Directorul '{path}' nu există. Introduceți o altă cale validă.")
+                continue
 
             lista_fisiere = os.listdir(path)
             lista_fisiere_audio = [fisier for fisier in lista_fisiere
                                    if os.path.isfile(os.path.join(path, fisier)) and
                                    fisier.lower().endswith((".mp3", ".wav", ".ogg", ".flac"))]
 
-            if not lista_fisiere_audio:
-                print("Nu s-au găsit fișiere audio în acest director.")
+            if  len(lista_fisiere_audio):
+                return lista_fisiere_audio
+
+            print("Nu exista niciun fisier audio, incercati alta cale ")
 
 
-            return lista_fisiere_audio
+
 
         except FileNotFoundError as e:
             print(e)
