@@ -95,8 +95,8 @@ def file_type(path:str, content:bytes)->GenericFile:
 
         if ascii_char_freq>=0.95:
             if is_ascii_XML(content):
-                start_tag = content.find(b'<')  # gasesc primul caracterul < as byte
-                end_tag = content.find(b'>')  # gasesc primul caracter > as byte
+                start_tag = content.find(b'<')
+                end_tag = content.find(b'>')
                 first_tag = str(content[start_tag + 1:end_tag].decode(errors="ignore").split())
                 return XMLFile(path=path, lista=frecvente, tag=first_tag)
             else:
