@@ -1,5 +1,4 @@
 import asyncio
-from asyncio import queues
 
 
 async def gauss(name: str, q):
@@ -20,7 +19,7 @@ async def main():
             gauss("A", q),
             gauss("B", q),
             gauss("C", q),
-            gauss("D",q )
+            gauss("D", q )
         )
         await q.join()
 

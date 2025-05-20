@@ -3,7 +3,7 @@ import multiprocessing
 from concurrent.futures import ThreadPoolExecutor
 import time
 def countdown():
-    x = 100000000
+    x = 100_000_000
     while x > 0:
         x -= 1
 def ver_1():

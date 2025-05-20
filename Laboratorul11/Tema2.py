@@ -8,17 +8,16 @@ def main():
 
         print(commands)
 
-        proces = []
         for cmd in commands:
                 cv = cmd.strip().split()
 
                 if proces_trecut is None:
-                        proc = subprocess.Popen(cv, stdout=subprocess.PIPE)
+                        proces_curent = subprocess.Popen(cv, stdout=subprocess.PIPE)
                 else:
-                        proc = subprocess.Popen(cv, stdin=proces_trecut.stdout, stdout=subprocess.PIPE)
-                proces_trecut = proc
+                        proces_curent = subprocess.Popen(cv, stdin=proces_trecut.stdout, stdout=subprocess.PIPE)
+                proces_trecut = proces_curent
         output, err = proces_trecut.communicate()
-        print(f" Resultatul este: {output.decode()} cu eroarea: {err}")
+        print(f" Rezultatul este: {output.decode()} cu eroarea: {err}")
 
 if __name__ == '__main__':
         main()

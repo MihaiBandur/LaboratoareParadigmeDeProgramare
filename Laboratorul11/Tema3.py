@@ -60,7 +60,7 @@ def do_something(x):
     print(f"Finished processing {x}.")
 
 if __name__ == "__main__":
-    args = range(9)
+    args = range(20)
 
     with ThreadPool(4) as pool:
         pool.map(do_something, args)
